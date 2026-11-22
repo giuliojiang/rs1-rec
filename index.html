@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script>
+    // Auto-upgrade HTTP -> HTTPS (needed for WebCrypto PIN unlock).
+    // Local dev (localhost) stays on HTTP so `python3 -m http.server` still works.
+    if (window.location.protocol === 'http:') {
+      var host = window.location.hostname;
+      if (host !== 'localhost' && host !== '127.0.0.1' && host !== '[::1]') {
+        window.location.replace('https://' + window.location.host + window.location.pathname + window.location.search + window.location.hash);
+      }
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta name="theme-color" content="#ffffff">
   <meta name="mobile-web-app-capable" content="yes">
