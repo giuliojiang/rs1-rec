@@ -1,0 +1,3 @@
+# Never ship plaintext audio — only .enc files belong in this repo
+*.mp3
+!*.mp3.enc

@@ -1,0 +1,9 @@
+{
+  "name": "rs1-rec",
+  "private": true,
+  "scripts": {
+    "rebuild": "node rebuild-manifest.js",
+    "encrypt": "node tools/encrypt.mjs"
+  },
+  "type": "module"
+}
